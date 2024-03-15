@@ -16,7 +16,7 @@
 ini_set('display_errors', 1);
 define('DB_NAME', 'geoworld');
 define('DB_DSN', 'mysql:host=localhost;dbname=' . DB_NAME . ';charset=utf8');
-define('DB_USER', 'sio');
+define('DB_USER', 'admin');
 define('DB_PASSWORD', 'sio');
 define('DEBUG', true);
 

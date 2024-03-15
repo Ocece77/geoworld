@@ -16,3 +16,10 @@
 <script src="assets/library/jquery-3.4.1.js"> </script>
 <script src="assets/bootstrap-4.4.1-dist/js/bootstrap.js"> </script>
 
+ <!-- Latest compiled and minified CSS -->
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
+
+<link href="animation.css" rel="stylesheet">

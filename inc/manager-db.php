@@ -57,6 +57,44 @@ function getCountriesByContinent($continent)
 function getAllCountries()
 {
     global $pdo;
-    $query = 'SELECT * FROM Country;';
+    $query = 'SELECT * FROM Country ;';
     return $pdo->query($query)->fetchAll();
+}
+
+function getAllContinent(){
+    global $pdo;
+    $query = 'SELECT DISTINCT Continent FROM Country ; ';
+    return $pdo->query($query)->fetchAll();
+}
+
+function getCapital($n){
+    global $pdo;
+
+    $query = 'SELECT City.Name 
+    FROM City, Country
+    WHERE  City.id = Country.Capital
+    AND City.id = :n;';
+
+    $prep = $pdo->prepare($query);
+    $prep->bindValue(':n', $n, PDO::PARAM_STR);
+    $prep->execute();
+
+    return $prep->fetch() ->Name;
+}
+
+
+function getCountryInfo($n){
+    global $pdo;
+
+    $query = 'SELECT * FROM Country WHERE Name = :n;';
+    
+
+    $prep = $pdo->prepare($query);
+    $prep->bindValue(':n', $n, PDO::PARAM_STR);
+    $prep->execute();
+
+    $prep->execute();
+   
+    return $prep->fetchAll();
+
 }

@@ -1,0 +1,39 @@
+@keyframes slidein {
+    0%{
+        opacity: 0 ;
+        padding-left: 3em ;
+    }
+
+    100%{
+        opacity: 1 ;
+        margin-right: 0 ;        
+    }
+
+}
+
+
+@keyframes fadein {
+    0%{
+        opacity: 1 ;
+    }
+
+    100%{
+        opacity: 0 ;
+    }
+
+}
+
+
+
+:root{
+   --slidein-animation : slidein 1s ease-in-out  ;
+   --fadein-animation : fadein .4s ease-in  ;
+}
+
+
+.slidein{
+    animation: var(--slidein-animation);
+}
+.fadein{
+    animation: var(--fadein-animation);
+}

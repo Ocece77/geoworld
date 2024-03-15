@@ -19,6 +19,9 @@
   <meta name="description" content="">
   <title>Homepage : GeoWorld</title>
 
+    <?php require_once 'inc/manager-db.php'; ?>
+    
+
   <!-- Bootstrap core CSS -->
   <link href="assets/bootstrap-4.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -59,11 +62,15 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-             aria-expanded="false">Dropdown</a>
+             aria-expanded="false">Continent</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
+
+
+            <?php foreach( getAllContinent() as $continent){?>
+              <a class="dropdown-item"   href="index2.php?continent=<?php echo $continent-> Continent;?>"> <?php echo $continent-> Continent;?> </a>
+
+              <?php }  ?>
+
           </div>
         </li>
       </ul>
@@ -87,3 +94,4 @@
     </div>
   </nav>
 </header>
+
