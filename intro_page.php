@@ -7,7 +7,7 @@ require_once 'javascripts.php';
 
 
 <div id="frame" class="container  d-flex flex-column justify-content-center align-items-center mb-5  " style="width : 100%; height : 100% ">
-    <div class="row">
+    <div class="row mb-5">
         <div class="col">
             <h1 style="font-size : 5em" id="title">Les Listes de Pays </h1>
         </div>

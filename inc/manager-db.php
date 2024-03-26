@@ -79,7 +79,7 @@ function getCapital($n){
     $prep->bindValue(':n', $n, PDO::PARAM_STR);
     $prep->execute();
 
-    return $prep->fetch() ->Name;
+    return $prep->fetchAll() ->Name;
 }
 
 
@@ -87,14 +87,24 @@ function getCountryInfo($n){
     global $pdo;
 
     $query = 'SELECT * FROM Country WHERE Name = :n;';
-    
 
     $prep = $pdo->prepare($query);
     $prep->bindValue(':n', $n, PDO::PARAM_STR);
     $prep->execute();
-
-    $prep->execute();
    
     return $prep->fetchAll();
+
+}
+
+function getCountryCode($n){
+    global $pdo;
+
+    $query = 'SELECT Code2, Name FROM Country WHERE id = :n;';
+
+    $prep = $pdo->prepare($query);
+    $prep->bindValue(':n', $n, PDO::PARAM_STR);
+    $prep->execute();
+   
+    return $prep->fetchAll() ;
 
 }

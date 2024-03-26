@@ -13,7 +13,7 @@
  */
 
 ?>
-<?php  require_once 'header.php'; 
+<?php  require_once '/home/ocece77/public_html/geoworld/header.php'; 
 require_once 'inc/manager-db.php';
 
 ?>
@@ -39,9 +39,10 @@ global $continent;
 <main role="main" class="flex-shrink-0">
 
   <div class="container">
-    <h1 id="title" style="font-size:5em" class="text-center mb-4 text-info text-capitalize">Les pays en <?php echo $continent;?></h1>
+    <h1 id="title" style="font-size:5em" class="text-center mb-5 text-info text-capitalize">Les pays en <?php echo $continent;?></h1>
     <div>
-     <table id ="table" class="table">
+     <table id ="table" class="table table-hover">
+     <thead class="thead-dark ">
          <tr>
            <th>flags</th>
            <th>Nom</th>
@@ -50,6 +51,7 @@ global $continent;
            <th>Update information</th>
     
          </tr>
+</thead>
        <?php
        // $desPays est un tableau dont les éléments sont des objets représentant
        // des caractéristiques d'un pays (en relation avec les colonnes de la table Country)
@@ -62,14 +64,13 @@ global $continent;
             <td> <?php echo $pays->Population ?></td>
             <td> <?php echo getCapital($pays -> Capital)  ?></td> 
             <td>
-            <a class="text-decoration-none link-info link-opacity-75-hover" href="updatePage.php?n=<?php echo $n-> Name;?>"  >
+            <a class="text-decoration-none link-info link-opacity-75-hover"  href="updatePage.php?n=<?php echo $pays-> Name;?>" >
               <button  type="button" class="btn btn-outline-info">Update</button>
-          </a>
+            </a>
               </td>
           </tr>
           <?php }  ?>
 
-          
      </table>
     </div>
 
